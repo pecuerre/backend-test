@@ -27,7 +27,9 @@ function add_event_date(new_date) {
 	str += "'>";
 	//console.debug(str);
 	$('#dates').append(str);
-	$('#event_' + event_id).datetimepicker();
+	$('#event_' + event_id).datetimepicker({
+		format: "YYYY-MM-DD hh:mm:ss"
+	});
     $('#remove_' + event_id).click(function(e) {
     	remove_event_date(e);
     });
@@ -36,7 +38,9 @@ function add_event_date(new_date) {
 }
 
 $(document).ready(function () {
-    $('.datetimepicker').datetimepicker();
+    $('.datetimepicker').datetimepicker({
+    	format: "YYYY-MM-DD hh:mm:ss"
+    });
     $('.event_remover').click(function() {
     	remove_event_date();
     });

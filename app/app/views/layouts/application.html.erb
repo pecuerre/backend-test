@@ -64,7 +64,29 @@
           <%= yield %>
         </div>
         <div class="col-lg-4">
-          <%= content_for :sidebar %>
+          <div class="well sidebar-nav">
+            <h3>Today's Highlights </h3>
+            <ul class="nav nav-list">
+              <!-- <li class="nav-header">Sidebar</li> -->
+              <% @featured_events.each do |event_date| %>
+                <% event = event_date.event %>
+                <li>
+                  <div class="media">
+                    <div class="media-left">
+                      <%= link_to small_image_tag(event.image), event %>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading"><%= event.title %></h4>
+                      <%= event_date.when %>
+                      <% if event.place.present? %>
+                        <%= event.place %>
+                      <% end %>
+                    </div>
+                  </div>                  
+                </li>
+              <% end %>
+            </ul>
+          </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
 
