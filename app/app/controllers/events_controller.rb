@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = EventDate.order(:when).page(params[:page]).per(20)
+    @events = EventDate.order(:when).page(params[:page]).per(4)
   end
 
   # GET /events/1
@@ -31,6 +31,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
     insert_dates_into_event
 
     respond_to do |format|

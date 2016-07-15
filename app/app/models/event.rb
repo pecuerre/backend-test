@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
 	has_many :event_dates
 	after_save :update_event_dates
 	before_destroy :remove_event_dates
+	belongs_to :user
 
 	def date_list
 		self.dates.to_s.split(Event::SEPARATOR)
