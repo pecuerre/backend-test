@@ -8,7 +8,7 @@ module ApplicationHelper
 		if string.present?
 			string
 		else
-			%<<img src="assets/holder.min.js/#{size}">>
+			holder_tag size, '', 'gray', :class => 'pull-left highlight-image'
 		end
 	end
 end
