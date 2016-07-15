@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :description
       t.string :dates
       t.string :place
-      t.bool :featured
+      t.boolean :featured
       t.string :image
 
       t.timestamps null: false

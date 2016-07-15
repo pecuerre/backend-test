@@ -5,7 +5,7 @@ one:
   description: MyText
   dates: MyString
   place: MyString
-  featured: 
+  featured: false
   image: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   description: MyText
   dates: MyString
   place: MyString
-  featured: 
+  featured: false
   image: MyString
