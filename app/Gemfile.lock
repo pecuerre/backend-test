@@ -40,6 +40,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.1.1)
@@ -89,6 +91,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    momentjs-rails (2.11.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -155,9 +159,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.0)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     twitter-bootstrap-rails (3.2.0)
       actionpack (~> 4.1)
       execjs (~> 2.2)
@@ -179,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -187,6 +189,7 @@ DEPENDENCIES
   jquery-rails
   less
   less-rails
+  momentjs-rails (>= 2.9.0)
   rails (= 4.2.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -194,7 +197,6 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer
-  turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

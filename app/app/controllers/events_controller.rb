@@ -22,10 +22,16 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def insert_dates_into_event
+    #byebug
+    @event.dates = params[:dates].join(Event::SEPARATOR)
+  end
+
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    insert_dates_into_event
 
     respond_to do |format|
       if @event.save
@@ -43,6 +49,8 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
+        insert_dates_into_event
+        @event.save
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else

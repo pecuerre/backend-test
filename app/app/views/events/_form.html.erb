@@ -11,31 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class=row>
+    <div class="col-md-8">
+      <%= f.text_field :title, :placeholder => 'Title of the Event',
+        :class => 'col-md-12' %> <br> <br>
+      <%= f.text_area :description, :placeholder => 'Description of the event', 
+        :class => 'col-md-12', :rows => 10 %> <br> <br>
+    </div>
+
+    <div class="col-md-4">
+      <%= f.check_box :featured %> Featured Event <br> <br>
+      <%= f.text_field :image, :placeholder => 'URL of the image', 
+        :class => 'col-md-12' %> <br> <br>
+      <%= f.text_field :place, :placeholder => 'Place of the Event',
+        :class => 'col-md-12' %> <br> <br>
+
+      <%= f.label :dates %>
+      <a class='btn btn-xs btn-primary' id='add-date'>+</a> <br>
+      <% f.text_field :dates %>
+
+      <div id="dates">
+        <script>
+          var old_dates = <%= @event.date_list.inspect.html_safe; %>;
+        </script>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :dates %><br>
-    <%= f.text_field :dates %>
-  </div>
-  <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_field :place %>
-  </div>
-  <div class="field">
-    <%= f.label :featured %><br>
-    <%= f.check_box :featured %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <br>
+  <div class="actions well">
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>
