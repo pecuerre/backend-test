@@ -1,5 +1,3 @@
-== README
-
 To setup the EventApp you should:
 
 * Clone the repository
