@@ -2,26 +2,36 @@
 
 To setup the EventApp you should:
 
+* Clone the repository
+
 ~~~bash
 $ git glone https://github.com/pecuerre/backend-test
 ~~~
 
-* System dependencies
+* Go to the app directory
 
-* Configuration
+~~~bash
+$ cd backend-test/ # this is the repo
+$ cd app/ # this is the rails app
+~~~
 
-* Database creation
+* Run bundle
 
-* Database initialization
+~~~bash
+$ bundle install
+~~~
 
-* How to run the test suite
+* Migrate the database
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+~~~bash
+$ rake db:migrate
+~~~
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Run the server
+
+~~~bash
+$ rails server
+~~~
+
+* Open your browser in http://localhost:3000
