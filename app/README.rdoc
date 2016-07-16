@@ -2,7 +2,7 @@
 
 To setup the EventApp you should:
 
-~~~
+~~~bash
 $ git glone https://github.com/pecuerre/backend-test
 ~~~
 
