@@ -1,11 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To setup the EventApp you should:
 
-Things you may want to cover:
-
-* Ruby version
+~~~
+$ git glone https://github.com/pecuerre/backend-test
+~~~
 
 * System dependencies
 
