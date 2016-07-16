@@ -33,3 +33,7 @@ $ rails server
 ~~~
 
 * Open your browser in http://localhost:3000
+
+* In order to create some events you must first login to the app
+
+* If you don't have a user then you must first sign up and create a new account
