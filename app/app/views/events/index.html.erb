@@ -12,11 +12,14 @@
           <p><strong>Place:</strong> <%= event.place %> </p>
           <p><strong>Date:</strong> <%= event_date.when %></p>
           <p>
-            <%= link_to 'Details', event, :class => 'btn btn-sm btn-primary' %>
+            <%= link_to 'Details', event, :class => 'btn btn-xs btn-primary' %>
             <% if event.user == current_user %>
-              <%= link_to 'Edit', edit_event_path(event) %>
-              <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>          
+              <%= link_to 'Edit', edit_event_path(event), 
+                :class => 'btn btn-xs btn-warning' %>
+              <%= link_to 'Delete', event, method: :delete, 
+                data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger' %>          
             <% end %>
+            <%= link_to "tweet", "http://twitter.com/home?status=ire al #{event.title} @#{event_date.when} (http://#{request.host}:#{request.port}/events/#{event.id})", :class => 'btn btn-xs btn-info' %>
           </p>
         </div>
       </div>
