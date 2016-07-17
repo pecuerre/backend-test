@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+
   setup do
+    sign_in users(:one)
     @event = events(:one)
   end
 
@@ -18,7 +21,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: { dates: @event.dates, description: @event.description, featured: @event.featured, image: @event.image, place: @event.place, title: @event.title }
+      post :create, dates: [Date.today], event: { description: @event.description, featured: @event.featured, image: @event.image, place: @event.place, title: @event.title }
     end
 
     assert_redirected_to event_path(assigns(:event))
@@ -35,7 +38,7 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should update event" do
-    patch :update, id: @event, event: { dates: @event.dates, description: @event.description, featured: @event.featured, image: @event.image, place: @event.place, title: @event.title }
+    patch :update, id: @event, dates: [Date.today], event: { description: @event.description, featured: @event.featured, image: @event.image, place: @event.place, title: @event.title }
     assert_redirected_to event_path(assigns(:event))
   end
 

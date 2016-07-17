@@ -23,7 +23,6 @@ class EventsController < ApplicationController
   end
 
   def insert_dates_into_event
-    #byebug
     @event.dates = params[:dates].join(Event::SEPARATOR)
   end
 
